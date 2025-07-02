@@ -319,11 +319,11 @@ sound("piano:0 piano:1 piano:2")</code></pre>
                 </div>
                 <div class="code-example">
                     <pre><code>// Vocal samples
-sound("piano:0 piano:1 piano:2")</code></pre>
+sound("vocal:0 vocal:1 vocal:2")</code></pre>
                 </div>
                 <div class="code-example">
                     <pre><code>// Bass samples
-sound("sawtooth:0 sawtooth:1 sawtooth:2")</code></pre>
+sound("bass:0 bass:1 bass:2")</code></pre>
                 </div>
             </div>
 
@@ -340,11 +340,11 @@ sound("hh*8").lpf(800)</code></pre>
                 </div>
                 <div class="code-example">
                     <pre><code>// High-pass filter
-sound("sawtooth").note("c3 d3").hpf(200)</code></pre>
+sound("bass:0 bass:1").hpf(200)</code></pre>
                 </div>
                 <div class="code-example">
                     <pre><code>// Delay effect
-sound("sd").delay(0.25)</code></pre>
+sound("sd").delay(0.25).delayfeedback(0.6)</code></pre>
                 </div>
             </div>
 
@@ -357,7 +357,7 @@ sound("bd hh*4 sd hh*4").gain("1 0.3 1 0.3")</code></pre>
                 </div>
                 <div class="code-example">
                     <pre><code>// Dynamic volume
-sound("bd sd").gain("0.5 0.8 0.6 1")</code></pre>
+sound("bd sd").gain(sine.range(0.5, 1))</code></pre>
                 </div>
             </div>
 
@@ -381,33 +381,21 @@ sound("hh*8").speed("1 1.2 0.8 1.1")</code></pre>
             <div class="concept">
                 <h3>Euclidean Rhythms</h3>
                 <p>Create complex rhythms with euclidean patterns:</p>
-                                <div class="code-example">
-                    <pre><code>// Simple euclidean rhythm
+                <div class="code-example">
+                    <pre><code>// 3 hits in 8 steps
 sound("bd").euclidean(3, 8)</code></pre>
                 </div>
                 <div class="code-example">
-                    <pre><code>// Another euclidean pattern
+                    <pre><code>// 5 hits in 12 steps
 sound("cp").euclidean(5, 12)</code></pre>
                 </div>
                 <div class="code-example">
-                    <pre><code>// Layered euclidean rhythms (same length)
+                    <pre><code>// Layered euclidean rhythms
 stack(
   sound("bd").euclidean(3, 8),
-  sound("sd").euclidean(5, 8),
-  sound("hh").euclidean(7, 8).gain(0.4)
+  sound("sd").euclidean(5, 16),
+  sound("hh").euclidean(7, 16).gain(0.4)
 )</code></pre>
-                </div>
-                <div class="code-example">
-                    <pre><code>// Different euclidean patterns
-stack(
-  sound("bd").euclidean(4, 16),
-  sound("sd").euclidean(3, 8).fast(2),
-  sound("hh*2").euclidean(11, 16).gain(0.3)
-)</code></pre>
-                </div>
-                <div class="code-example">
-                    <pre><code>// Euclidean with effects
-sound("hh").euclidean(13, 16).gain(0.5).lpf(800)</code></pre>
                 </div>
             </div>
 
@@ -416,7 +404,7 @@ sound("hh").euclidean(13, 16).gain(0.5).lpf(800)</code></pre>
                 <p>Transform patterns over time:</p>
                 <div class="code-example">
                     <pre><code>// Gradually speed up
-sound("bd hh sd hh").fast("0.5 0.8 0.6 1")</code></pre>
+sound("bd hh sd hh").fast(sine.range(1, 4))</code></pre>
                 </div>
                 <div class="code-example">
                     <pre><code>// Random variations
@@ -428,7 +416,7 @@ sound("hh*8").when(x => x > 0.5, x => x.lpf(400))</code></pre>
                 </div>
             </div>
 
-                        <div class="concept">
+            <div class="concept">
                 <h3>Melodic Patterns</h3>
                 <p>Create melodies with notes:</p>
                 <div class="code-example">
@@ -436,40 +424,12 @@ sound("hh*8").when(x => x > 0.5, x => x.lpf(400))</code></pre>
 sound("piano").note("c d e f g a b c5")</code></pre>
                 </div>
                 <div class="code-example">
-                    <pre><code>// Slow chord progression (all 4 chords)
-sound("piano").note("<c e g> <d f a> <e g b> <f a c>").slow(2)</code></pre>
-                </div>
-                <div class="code-example">
-                    <pre><code>// Classic I-V-vi-IV progression
-sound("piano").note("<c e g> <g b d> <a c e> <f a c>").slow(2)</code></pre>
-                </div>
-                <div class="code-example">
-                    <pre><code>// Chords with rhythm
-sound("piano").note("<c e g>*2 <d f a>*2 <e g b>*2 <f a c>*2").slow(4)</code></pre>
-                </div>
-                                <div class="code-example">
-                    <pre><code>// Bass + chords layered
-stack(
-  sound("piano").note("c d e f").slow(2),
-  sound("piano").note("<c e g> <d f a> <e g b> <f a c>").slow(2).gain(0.7)
-)</code></pre>
-                </div>
-                <div class="code-example">
-                    <pre><code>// Arpeggiated chords
-sound("piano").note("c e g c d f a d e g b e f a c f").fast(2)</code></pre>
-                </div>
-                <div class="code-example">
-                    <pre><code>// Bass line with rhythm
-sound("sawtooth").note("c3 ~ c3 g3").lpf(400)</code></pre>
-                </div>
-            </div>
-                <div class="code-example">
                     <pre><code>// Chord progression
-sound("piano").note("<c e g> <d f a> <e g b> <f a c>").slow(2)</code></pre>
+sound("piano").note("<c e g> <d f a> <e g b> <f a c5>")</code></pre>
                 </div>
                 <div class="code-example">
                     <pre><code>// Bass line with rhythm
-sound("sawtooth").note("c3 ~ c3 g3").lpf(400)</code></pre>
+sound("bass").note("c2 ~ c2 g2").fast(2)</code></pre>
                 </div>
             </div>
 
@@ -515,7 +475,7 @@ sound("hh*8").gain(saw.range(0, 1)).lpf(saw.range(200, 2000))</code></pre>
                     </ul>
                 </div>
                 
-                                <div class="example-buttons">
+                <div class="example-buttons">
                     <button class="example-btn" data-code='sound("bd hh sd hh")'>Basic Beat</button>
                     <button class="example-btn" data-code='sound("bd sd").fast(2)'>Fast Beat</button>
                     <button class="example-btn" data-code='sound("hh*8").lpf(400)'>Filtered Hi-hats</button>
@@ -523,9 +483,9 @@ sound("hh*8").gain(saw.range(0, 1)).lpf(saw.range(200, 2000))</code></pre>
                     <button class="example-btn" data-code='sound("piano").note("c d e f g a b c5")'>Piano Melody</button>
                     <button class="example-btn" data-code='sound("bd").euclidean(3, 8)'>Euclidean Rhythm</button>
                     <button class="example-btn" data-code='stack(sound("bd sd bd sd"), sound("hh hh oh hh").gain(0.4).fast(2), sound("~ ~ cp ~").gain(0.6).room(0.3))'>Full Drum Kit</button>
-                    <button class="example-btn" data-code='sound("sawtooth").note("c3 ~ c3 g3").lpf(400)'>Bass Line</button>
-                    <button class="example-btn" data-code='sound("piano").note("<c e g> <d f a> <e g b> <f a c>").slow(2)'>Chord Progression</button>
-                    <button class="example-btn" data-code='sound("bd sd").sometimes(x => x.fast(2))'>Live Coding Style</button>
+                    <button class="example-btn" data-code='sound("bass").note("c2 ~ c2 g2").fast(2)'>Bass Line</button>
+                    <button class="example-btn" data-code='sound("piano").note("<c e g> <d f a> <e g b> <f a c5>")'>Chord Progression</button>
+                    <button class="example-btn" data-code='sound("bd sd").sometimes(x => x.fast(2)).rarely(rev)'>Live Coding Style</button>
                 </div>
 
                 <iframe 

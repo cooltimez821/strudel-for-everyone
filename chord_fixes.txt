@@ -1,0 +1,28 @@
+Here are the improved chord progression examples to replace in the tutorial:
+
+ORIGINAL PROBLEMATIC EXAMPLE:
+sound("piano").note("<c e g> <d f a> <e g b> <f a c5>")
+
+IMPROVED EXAMPLES:
+
+1. Slow chord progression (all 4 chords):
+sound("piano").note("<c e g> <d f a> <e g b> <f a c>").slow(2)
+
+2. Classic I-V-vi-IV progression:
+sound("piano").note("<c e g> <g b d> <a c e> <f a c>").slow(2)
+
+3. Chords with rhythm:
+sound("piano").note("<c e g>*2 <d f a>*2 <e g b>*2 <f a c>*2").slow(4)
+
+4. Bass + chords layered:
+stack(
+  sound("piano").note("c d e f").slow(2),
+  sound("piano").note("<c e g> <d f a> <e g b> <f a c>").slow(2).gain(0.7)
+)
+
+5. Arpeggiated chords:
+sound("piano").note("c e g c d f a d e g b e f a c f").fast(2)
+
+Also update the REPL example button:
+FROM: sound("piano").note("<c e g> <d f a> <e g b> <f a c5>")
+TO: sound("piano").note("<c e g> <d f a> <e g b> <f a c>").slow(2)

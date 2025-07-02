@@ -39,7 +39,7 @@ nav h1 {
 nav ul {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 nav a {
@@ -47,6 +47,7 @@ nav a {
     color: #333;
     font-weight: 500;
     transition: color 0.3s ease;
+    font-size: 0.9rem;
 }
 
 nav a:hover {
@@ -157,6 +158,101 @@ main {
 .try-it h3 {
     color: #8b4513;
     margin-bottom: 1rem;
+}
+
+/* Building Steps Styles */
+.building-steps {
+    margin: 2rem 0;
+}
+
+.step {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+    position: relative;
+}
+
+.step h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.step h3:before {
+    content: counter(step-counter);
+    counter-increment: step-counter;
+    background: rgba(255, 255, 255, 0.2);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.building-steps {
+    counter-reset: step-counter;
+}
+
+.step p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+}
+
+.step .code-example {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.building-challenge {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 2rem 0;
+}
+
+.building-challenge h3 {
+    color: #8b4513;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.challenge-examples {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.challenge {
+    background: rgba(139, 69, 19, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #8b4513;
+}
+
+.challenge h4 {
+    color: #8b4513;
+    margin-bottom: 0.5rem;
+}
+
+.challenge p {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+.challenge code {
+    background: rgba(139, 69, 19, 0.2);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: monospace;
 }
 
 /* REPL Styles */
@@ -330,6 +426,10 @@ footer a:hover {
         grid-template-columns: 1fr;
     }
     
+    .challenge-examples {
+        grid-template-columns: 1fr;
+    }
+    
     .example-buttons {
         flex-direction: column;
     }
@@ -340,5 +440,13 @@ footer a:hover {
     
     #strudel-repl {
         height: 500px;
+    }
+    
+    .step {
+        padding: 1.5rem;
+    }
+    
+    .step h3 {
+        font-size: 1.1rem;
     }
 }
