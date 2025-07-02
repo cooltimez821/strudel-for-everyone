@@ -17,7 +17,12 @@
                 <li><a href="#building">Building Up</a></li>
                 <li><a href="#sounds">Sounds</a></li>
                 <li><a href="#advanced">Advanced</a></li>
+                <li><a href="#challenges">Challenges</a></li>
+                <li><a href="#timing">Timing</a></li>
+                <li><a href="#shortcuts">Shortcuts</a></li>
+                <li><a href="#cookbook">Cookbook</a></li>
                 <li><a href="#repl">Live REPL</a></li>
+                <li><a href="#troubleshooting">Help</a></li>
             </ul>
         </nav>
     </header>
@@ -500,6 +505,552 @@ sound("hh*4").gain(0.5)</code></pre>
             </div>
         </section>
 
+
+
+
+
+
+        <section id="challenges" class="tutorial-section">
+            <h2>🎯 Practice Challenges</h2>
+            <p>Test your skills with these guided exercises. Start easy and work your way up!</p>
+            
+            <div class="concept">
+                <h3>🟢 Beginner Challenges</h3>
+                <div class="challenge-grid">
+                    <div class="challenge-card">
+                        <h4>Challenge 1: Basic Beat</h4>
+                        <p><strong>Goal:</strong> Create a simple 4-step drum pattern</p>
+                        <p><strong>Try to make:</strong> Kick - Hihat - Snare - Hihat</p>
+                        <div class="challenge-hint">
+                            <details>
+                                <summary>💡 Hint</summary>
+                                <div class="code-example">
+                                    <pre><code>sound("bd hh sd hh")</code></pre>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>Challenge 2: Add Rests</h4>
+                        <p><strong>Goal:</strong> Create space in your pattern</p>
+                        <p><strong>Try to make:</strong> Kick - Rest - Snare - Rest</p>
+                        <div class="challenge-hint">
+                            <details>
+                                <summary>💡 Hint</summary>
+                                <div class="code-example">
+                                    <pre><code>sound("bd ~ sd ~")</code></pre>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>Challenge 3: Speed It Up</h4>
+                        <p><strong>Goal:</strong> Make your pattern play twice as fast</p>
+                        <p><strong>Start with:</strong> sound("bd hh sd hh")</p>
+                        <div class="challenge-hint">
+                            <details>
+                                <summary>💡 Hint</summary>
+                                <div class="code-example">
+                                    <pre><code>sound("bd hh sd hh").fast(2)</code></pre>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept">
+                <h3>🟡 Intermediate Challenges</h3>
+                <div class="challenge-grid">
+                    <div class="challenge-card">
+                        <h4>Challenge 4: Layer Two Patterns</h4>
+                        <p><strong>Goal:</strong> Play kick/snare and hi-hats together</p>
+                        <p><strong>Layer:</strong> "bd ~ sd ~" with "hh hh hh hh"</p>
+                        <div class="challenge-hint">
+                            <details>
+                                <summary>💡 Hint</summary>
+                                <div class="code-example">
+                                    <pre><code>stack(
+  sound("bd ~ sd ~"),
+  sound("hh hh hh hh")
+)</code></pre>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>Challenge 5: Add Effects</h4>
+                        <p><strong>Goal:</strong> Make hi-hats quieter using gain</p>
+                        <p><strong>Start with:</strong> sound("hh hh hh hh")</p>
+                        <div class="challenge-hint">
+                            <details>
+                                <summary>💡 Hint</summary>
+                                <div class="code-example">
+                                    <pre><code>sound("hh hh hh hh").gain(0.4)</code></pre>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>Challenge 6: Repetition</h4>
+                        <p><strong>Goal:</strong> Make kick play twice per step</p>
+                        <p><strong>Try:</strong> bd*2 instead of just bd</p>
+                        <div class="challenge-hint">
+                            <details>
+                                <summary>💡 Hint</summary>
+                                <div class="code-example">
+                                    <pre><code>sound("bd*2 ~ sd ~")</code></pre>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept">
+                <h3>🔴 Advanced Challenges</h3>
+                <div class="challenge-grid">
+                    <div class="challenge-card">
+                        <h4>Challenge 7: Complex Layering</h4>
+                        <p><strong>Goal:</strong> Create a full drum kit with 4 layers</p>
+                        <p><strong>Include:</strong> Kicks, snares, hi-hats, and claps</p>
+                        <div class="challenge-hint">
+                            <details>
+                                <summary>💡 Hint</summary>
+                                <div class="code-example">
+                                    <pre><code>stack(
+  sound("bd ~ sd ~"),
+  sound("hh hh hh hh").gain(0.4),
+  sound("~ ~ cp ~").gain(0.6),
+  sound("~ ~ ~ cy").gain(0.3)
+)</code></pre>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>Challenge 8: Random Changes</h4>
+                        <p><strong>Goal:</strong> Add sometimes() to make patterns unpredictable</p>
+                        <p><strong>Make:</strong> A beat that sometimes plays faster</p>
+                        <div class="challenge-hint">
+                            <details>
+                                <summary>💡 Hint</summary>
+                                <div class="code-example">
+                                    <pre><code>sound("bd hh sd hh").sometimes(x => x.fast(2))</code></pre>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                    <div class="challenge-card">
+                        <h4>Challenge 9: Create Your Style</h4>
+                        <p><strong>Goal:</strong> Combine everything youve learned</p>
+                        <p><strong>Make:</strong> A unique beat using layers, effects, and timing</p>
+                        <div class="challenge-hint">
+                            <details>
+                                <summary>💡 Inspiration</summary>
+                                <p>Try combining patterns from the cookbook with your own ideas!</p>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept">
+                <h3>🏆 Master Challenge</h3>
+                <div class="challenge-card master">
+                    <h4>Challenge 10: Live Performance</h4>
+                    <p><strong>Goal:</strong> Create and modify patterns in real-time</p>
+                    <p><strong>Task:</strong></p>
+                    <ol>
+                        <li>Start with a simple beat: sound("bd hh sd hh")</li>
+                        <li>While its playing, change it to: sound("bd ~ sd ~")</li>
+                        <li>Add a layer with stack()</li>
+                        <li>Add effects like .gain() or .room()</li>
+                        <li>Experiment with .fast() and .slow()</li>
+                        <li>Keep the music flowing - never stop!</li>
+                    </ol>
+                    <p><strong>Pro tip:</strong> This is what live coding is all about - creating music in real-time!</p>
+                </div>
+            </div>
+        </section>
+        <section id="timing" class="tutorial-section">
+            <h2>🎵 Musical Timing</h2>
+            <p>Understanding how patterns sync and why timing matters in Strudel.</p>
+            
+            <div class="concept">
+                <h3>🔢 Counting Steps</h3>
+                <p>Every pattern in Strudel has a certain number of steps. This determines how long it takes to play.</p>
+                <div class="timing-examples">
+                    <div class="timing-card">
+                        <h4>4 Steps (Most Common)</h4>
+                        <div class="code-example">
+                            <pre><code>sound("bd hh sd hh")
+// 1  2  3  4</code></pre>
+                        </div>
+                        <p>Perfect for most beats - plays 4 sounds then repeats</p>
+                    </div>
+                    <div class="timing-card">
+                        <h4>8 Steps (Longer Patterns)</h4>
+                        <div class="code-example">
+                            <pre><code>sound("bd ~ sd ~ bd ~ sd hh")
+// 1  2  3  4  5  6  7  8</code></pre>
+                        </div>
+                        <p>Twice as long - more complex rhythms</p>
+                    </div>
+                    <div class="timing-card">
+                        <h4>2 Steps (Quick Loops)</h4>
+                        <div class="code-example">
+                            <pre><code>sound("bd sd")
+// 1  2</code></pre>
+                        </div>
+                        <p>Very fast - repeats quickly</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept">
+                <h3>🔄 Pattern Sync</h3>
+                <p>When you layer patterns with stack(), they need to sync up properly:</p>
+                <div class="timing-examples">
+                    <div class="timing-card good">
+                        <h4>✅ Good Sync (Same Length)</h4>
+                        <div class="code-example">
+                            <pre><code>stack(
+  sound("bd ~ sd ~"),    // 4 steps
+  sound("hh hh hh hh")   // 4 steps
+)
+// Both patterns align perfectly!</code></pre>
+                        </div>
+                    </div>
+                    <div class="timing-card bad">
+                        <h4>⚠️ Tricky Sync (Different Lengths)</h4>
+                        <div class="code-example">
+                            <pre><code>stack(
+  sound("bd ~ sd ~"),      // 4 steps
+  sound("hh hh hh")        // 3 steps
+)
+// Patterns will drift apart over time</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept">
+                <h3>⚡ Speed Control</h3>
+                <p>Change how fast patterns play without changing their structure:</p>
+                <div class="timing-examples">
+                    <div class="timing-card">
+                        <h4>Normal Speed</h4>
+                        <div class="code-example">
+                            <pre><code>sound("bd hh sd hh")
+// Plays at default tempo</code></pre>
+                        </div>
+                    </div>
+                    <div class="timing-card">
+                        <h4>Double Speed</h4>
+                        <div class="code-example">
+                            <pre><code>sound("bd hh sd hh").fast(2)
+// Same pattern, twice as fast</code></pre>
+                        </div>
+                    </div>
+                    <div class="timing-card">
+                        <h4>Half Speed</h4>
+                        <div class="code-example">
+                            <pre><code>sound("bd hh sd hh").slow(2)
+// Same pattern, half as fast</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept">
+                <h3>🎯 Timing Tips</h3>
+                <ul>
+                    <li><strong>Start with 4 steps:</strong> "bd hh sd hh" is the perfect foundation</li>
+                    <li><strong>Count your steps:</strong> bd ~ sd ~ = 4 steps, bd sd = 2 steps</li>
+                    <li><strong>Use ~ for rests:</strong> Creates space and maintains timing</li>
+                    <li><strong>Layer same lengths:</strong> 4-step + 4-step = perfect sync</li>
+                    <li><strong>Experiment with speed:</strong> .fast(2) and .slow(2) are your friends</li>
+                    <li><strong>Listen for the loop:</strong> Good patterns feel natural when they repeat</li>
+                </ul>
+            </div>
+        </section>
+        <section id="shortcuts" class="tutorial-section">
+            <h2>⌨️ Keyboard Shortcuts</h2>
+            <p>Master these shortcuts to become a live coding pro!</p>
+            
+            <div class="concept">
+                <h3>🎵 Essential REPL Controls</h3>
+                <div class="shortcuts-grid">
+                    <div class="shortcut-card">
+                        <div class="shortcut-key">Ctrl + Enter</div>
+                        <div class="shortcut-desc">Play/Execute your pattern</div>
+                    </div>
+                    <div class="shortcut-card">
+                        <div class="shortcut-key">Ctrl + .</div>
+                        <div class="shortcut-desc">Stop all sounds (panic button!)</div>
+                    </div>
+                    <div class="shortcut-card">
+                        <div class="shortcut-key">Cmd + Enter</div>
+                        <div class="shortcut-desc">Play/Execute (Mac)</div>
+                    </div>
+                    <div class="shortcut-card">
+                        <div class="shortcut-key">Cmd + .</div>
+                        <div class="shortcut-desc">Stop all sounds (Mac)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept">
+                <h3>📝 Text Editing</h3>
+                <div class="shortcuts-grid">
+                    <div class="shortcut-card">
+                        <div class="shortcut-key">Ctrl + A</div>
+                        <div class="shortcut-desc">Select all text</div>
+                    </div>
+                    <div class="shortcut-card">
+                        <div class="shortcut-key">Ctrl + C</div>
+                        <div class="shortcut-desc">Copy selected text</div>
+                    </div>
+                    <div class="shortcut-card">
+                        <div class="shortcut-key">Ctrl + V</div>
+                        <div class="shortcut-desc">Paste text</div>
+                    </div>
+                    <div class="shortcut-card">
+                        <div class="shortcut-key">Ctrl + Z</div>
+                        <div class="shortcut-desc">Undo last change</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept">
+                <h3>🔍 Browser Shortcuts</h3>
+                <div class="shortcuts-grid">
+                    <div class="shortcut-card">
+                        <div class="shortcut-key">F5</div>
+                        <div class="shortcut-desc">Refresh page (fixes audio issues)</div>
+                    </div>
+                    <div class="shortcut-card">
+                        <div class="shortcut-key">F12</div>
+                        <div class="shortcut-desc">Open developer tools (for debugging)</div>
+                    </div>
+                    <div class="shortcut-card">
+                        <div class="shortcut-key">F1</div>
+                        <div class="shortcut-desc">Show help (in this tutorial)</div>
+                    </div>
+                    <div class="shortcut-card">
+                        <div class="shortcut-key">Ctrl + +/-</div>
+                        <div class="shortcut-desc">Zoom in/out</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept">
+                <h3>💡 Pro Tips</h3>
+                <ul>
+                    <li><strong>Ctrl + . is your friend:</strong> Use it when sounds get stuck or too loud</li>
+                    <li><strong>Copy examples:</strong> Use the copy buttons throughout this tutorial</li>
+                    <li><strong>Practice typing:</strong> Live coding is about speed and flow</li>
+                    <li><strong>Learn patterns by heart:</strong> "bd hh sd hh" should become muscle memory</li>
+                    <li><strong>Experiment while playing:</strong> Change patterns while they loop</li>
+                </ul>
+            </div>
+        </section>
+        <section id="cookbook" class="tutorial-section">
+            <h2>📚 Pattern Cookbook</h2>
+            <p>20 proven patterns that always work - perfect for inspiration and practice!</p>
+            
+            <div class="concept">
+                <h3>🥁 Basic Beats</h3>
+                <div class="cookbook-grid">
+                    <div class="pattern-card">
+                        <h4>Classic House</h4>
+                        <div class="code-example">
+                            <pre><code>sound("bd ~ sd ~")</code></pre>
+                        </div>
+                    </div>
+                    <div class="pattern-card">
+                        <h4>Four on Floor</h4>
+                        <div class="code-example">
+                            <pre><code>sound("bd bd bd bd")</code></pre>
+                        </div>
+                    </div>
+                    <div class="pattern-card">
+                        <h4>Breakbeat</h4>
+                        <div class="code-example">
+                            <pre><code>sound("bd ~ sd bd ~ sd ~ ~")</code></pre>
+                        </div>
+                    </div>
+                    <div class="pattern-card">
+                        <h4>Hip Hop</h4>
+                        <div class="code-example">
+                            <pre><code>sound("bd ~ sd ~ bd sd ~ ~")</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept">
+                <h3>🎵 Layered Patterns</h3>
+                <div class="cookbook-grid">
+                    <div class="pattern-card">
+                        <h4>Basic Techno</h4>
+                        <div class="code-example">
+                            <pre><code>stack(
+  sound("bd bd bd bd"),
+  sound("~ ~ sd ~"),
+  sound("hh hh hh hh").gain(0.4)
+)</code></pre>
+                        </div>
+                    </div>
+                    <div class="pattern-card">
+                        <h4>Garage Beat</h4>
+                        <div class="code-example">
+                            <pre><code>stack(
+  sound("bd ~ ~ bd ~ ~ bd ~"),
+  sound("~ sd ~ ~ ~ sd ~ sd"),
+  sound("hh ~ hh ~ hh ~ hh ~").gain(0.3)
+)</code></pre>
+                        </div>
+                    </div>
+                    <div class="pattern-card">
+                        <h4>Drum & Bass</h4>
+                        <div class="code-example">
+                            <pre><code>stack(
+  sound("bd ~ ~ ~ bd ~ ~ ~"),
+  sound("~ ~ sd ~ ~ ~ sd ~"),
+  sound("hh hh ~ hh hh hh ~ hh").gain(0.4)
+).fast(2)</code></pre>
+                        </div>
+                    </div>
+                    <div class="pattern-card">
+                        <h4>Minimal House</h4>
+                        <div class="code-example">
+                            <pre><code>stack(
+  sound("bd ~ ~ ~ bd ~ ~ ~"),
+  sound("~ ~ sd ~ ~ ~ sd ~"),
+  sound("~ hh ~ hh ~ hh ~ hh").gain(0.5)
+)</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept">
+                <h3>🔥 Advanced Patterns</h3>
+                <div class="cookbook-grid">
+                    <div class="pattern-card">
+                        <h4>Polyrhythm</h4>
+                        <div class="code-example">
+                            <pre><code>stack(
+  sound("bd ~ bd ~"),
+  sound("~ sd ~ sd ~").fast(4/3),
+  sound("hh hh hh").gain(0.4)
+)</code></pre>
+                        </div>
+                    </div>
+                    <div class="pattern-card">
+                        <h4>Swing Beat</h4>
+                        <div class="code-example">
+                            <pre><code>sound("bd [~ hh] sd [hh ~]")</code></pre>
+                        </div>
+                    </div>
+                    <div class="pattern-card">
+                        <h4>Triplet Feel</h4>
+                        <div class="code-example">
+                            <pre><code>sound("bd ~ ~ sd ~ ~ bd ~ ~ sd ~ ~")</code></pre>
+                        </div>
+                    </div>
+                    <div class="pattern-card">
+                        <h4>Glitch Beat</h4>
+                        <div class="code-example">
+                            <pre><code>sound("bd sd*2 ~ [bd sd] ~ sd bd ~")</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept">
+                <h3>🎛️ With Effects</h3>
+                <div class="cookbook-grid">
+                    <div class="pattern-card">
+                        <h4>Reverb Drums</h4>
+                        <div class="code-example">
+                            <pre><code>stack(
+  sound("bd ~ sd ~"),
+  sound("~ ~ cp ~").room(0.8),
+  sound("hh hh hh hh").gain(0.3).room(0.2)
+)</code></pre>
+                        </div>
+                    </div>
+                    <div class="pattern-card">
+                        <h4>Dynamic Volume</h4>
+                        <div class="code-example">
+                            <pre><code>stack(
+  sound("bd bd bd bd"),
+  sound("hh hh hh hh").gain("0.8 0.3 0.6 0.4")
+)</code></pre>
+                        </div>
+                    </div>
+                    <div class="pattern-card">
+                        <h4>Speed Changes</h4>
+                        <div class="code-example">
+                            <pre><code>sound("bd hh sd hh").sometimes(x => x.fast(2))</code></pre>
+                        </div>
+                    </div>
+                    <div class="pattern-card">
+                        <h4>Pitched Drums</h4>
+                        <div class="code-example">
+                            <pre><code>stack(
+  sound("bd ~ sd ~"),
+  sound("hh hh hh hh").speed("1 1.2 0.8 1.1").gain(0.4)
+)</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept">
+                <h3>🎯 Practice Starters</h3>
+                <div class="cookbook-grid">
+                    <div class="pattern-card">
+                        <h4>Simple Start</h4>
+                        <div class="code-example">
+                            <pre><code>sound("bd hh sd hh")</code></pre>
+                        </div>
+                    </div>
+                    <div class="pattern-card">
+                        <h4>Add Claps</h4>
+                        <div class="code-example">
+                            <pre><code>stack(
+  sound("bd hh sd hh"),
+  sound("~ ~ cp ~").gain(0.6)
+)</code></pre>
+                        </div>
+                    </div>
+                    <div class="pattern-card">
+                        <h4>More Hi-hats</h4>
+                        <div class="code-example">
+                            <pre><code>stack(
+  sound("bd ~ sd ~"),
+  sound("hh hh hh hh").gain(0.4)
+)</code></pre>
+                        </div>
+                    </div>
+                    <div class="pattern-card">
+                        <h4>Full Kit</h4>
+                        <div class="code-example">
+                            <pre><code>stack(
+  sound("bd ~ sd ~"),
+  sound("hh hh oh hh").gain(0.4),
+  sound("~ ~ cp ~").gain(0.6),
+  sound("~ ~ ~ cy").gain(0.3)
+)</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section id="repl" class="tutorial-section">
             <h2>🎮 Live Strudel REPL</h2>
             <p>Now try the real Strudel REPL! Copy any example from above and paste it here, or write your own patterns.</p>
@@ -550,6 +1101,77 @@ sound("hh*4").gain(0.5)</code></pre>
                     <li><strong>Make it random:</strong> Try <code>.sometimes(x => x.fast(2))</code></li>
                     <li><strong>Live coding:</strong> Change patterns while they're playing for dynamic performances!</li>
                 </ul>
+            </div>
+        </section>
+        <section id="troubleshooting" class="tutorial-section">
+            <h2>🔧 Troubleshooting</h2>
+            <p>Having issues? Here are solutions to the most common problems:</p>
+            
+            <div class="concept">
+                <h3>🔇 No Sound / Audio Issues</h3>
+                <div class="troubleshoot-item">
+                    <h4>Problem: Nothing plays when I press Ctrl+Enter</h4>
+                    <ul>
+                        <li><strong>Check browser audio:</strong> Click the speaker icon in your browser tab</li>
+                        <li><strong>Allow audio:</strong> Browser may ask permission - click "Allow"</li>
+                        <li><strong>Check volume:</strong> Make sure system volume is up</li>
+                        <li><strong>Try headphones:</strong> Sometimes speakers have issues</li>
+                    </ul>
+                </div>
+                <div class="troubleshoot-item">
+                    <h4>Problem: Audio cuts out or stutters</h4>
+                    <ul>
+                        <li><strong>Close other tabs:</strong> Free up browser resources</li>
+                        <li><strong>Refresh the page:</strong> Reset the audio engine</li>
+                        <li><strong>Use Chrome/Firefox:</strong> Best browser support</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="concept">
+                <h3>❌ Pattern Errors</h3>
+                <div class="troubleshoot-item">
+                    <h4>Problem: "Error" message in REPL</h4>
+                    <ul>
+                        <li><strong>Check spelling:</strong> bd, sd, hh (not kick, snare, hihat)</li>
+                        <li><strong>Check quotes:</strong> Use "bd hh sd hh" not bd hh sd hh</li>
+                        <li><strong>Check parentheses:</strong> sound("bd hh") not sound "bd hh"</li>
+                        <li><strong>Avoid advanced functions:</strong> Stick to basic patterns</li>
+                    </ul>
+                </div>
+                <div class="troubleshoot-item">
+                    <h4>Problem: Pattern plays but sounds wrong</h4>
+                    <ul>
+                        <li><strong>Check sample names:</strong> Use bd, sd, hh, oh, cp, cy only</li>
+                        <li><strong>Check timing:</strong> Use ~ for rests, not spaces</li>
+                        <li><strong>Check brackets:</strong> [bd sd] for subdivisions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="concept">
+                <h3>🎵 Timing Issues</h3>
+                <div class="troubleshoot-item">
+                    <h4>Problem: Patterns dont sync together</h4>
+                    <ul>
+                        <li><strong>Use same length:</strong> "bd hh sd hh" and "~ sd ~ sd" both have 4 steps</li>
+                        <li><strong>Count your steps:</strong> bd ~ sd ~ = 4 steps, bd sd = 2 steps</li>
+                        <li><strong>Use stack():</strong> stack(sound("bd"), sound("hh")) for layering</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="concept">
+                <h3>💡 Quick Fixes</h3>
+                <div class="troubleshoot-item">
+                    <h4>When in doubt, try these:</h4>
+                    <ul>
+                        <li><strong>Start simple:</strong> sound("bd hh sd hh") always works</li>
+                        <li><strong>Copy working examples:</strong> Use the copy buttons above</li>
+                        <li><strong>Refresh the page:</strong> Fixes most technical issues</li>
+                        <li><strong>Check the console:</strong> F12 → Console for error details</li>
+                    </ul>
+                </div>
             </div>
         </section>
     </main>
