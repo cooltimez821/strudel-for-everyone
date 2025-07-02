@@ -1,0 +1,344 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    color: #764ba2;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #764ba2;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.tutorial-section {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    margin: 2rem 0;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.tutorial-section h2 {
+    color: #764ba2;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.tutorial-section p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.feature {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.concept {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(102, 126, 234, 0.05);
+    border-radius: 15px;
+    border-left: 4px solid #667eea;
+}
+
+.concept h3 {
+    color: #667eea;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.concept ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.concept li {
+    margin: 0.5rem 0;
+}
+
+.code-example {
+    background: #2d3748;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    position: relative;
+    overflow-x: auto;
+}
+
+.code-example pre {
+    color: #e2e8f0;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.code-example code {
+    color: #e2e8f0;
+}
+
+.try-it {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.try-it h3 {
+    color: #8b4513;
+    margin-bottom: 1rem;
+}
+
+/* REPL Styles */
+.repl-container {
+    background: #f7fafc;
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.repl-instructions {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.repl-instructions h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.repl-instructions ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.repl-instructions li {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.repl-instructions li:before {
+    content: "▶";
+    position: absolute;
+    left: 0;
+    color: #ffd93d;
+}
+
+.repl-instructions kbd {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: monospace;
+    font-size: 0.9rem;
+}
+
+.example-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.example-btn {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(79, 172, 254, 0.3);
+}
+
+.example-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+}
+
+.example-btn:active {
+    transform: translateY(0);
+}
+
+#strudel-repl {
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.repl-tips {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 1.5rem;
+}
+
+.repl-tips h3 {
+    color: #8b4513;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.repl-tips ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.repl-tips li {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.repl-tips li:before {
+    content: "💡";
+    position: absolute;
+    left: 0;
+}
+
+.repl-tips strong {
+    color: #8b4513;
+}
+
+.repl-tips code {
+    background: rgba(139, 69, 19, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: monospace;
+    color: #8b4513;
+}
+
+footer {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    color: #666;
+}
+
+footer a {
+    color: #764ba2;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .tutorial-section {
+        padding: 2rem 1.5rem;
+        margin: 1rem 0;
+    }
+    
+    .tutorial-section h2 {
+        font-size: 2rem;
+    }
+    
+    main {
+        padding: 1rem;
+    }
+    
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .example-buttons {
+        flex-direction: column;
+    }
+    
+    .example-btn {
+        width: 100%;
+    }
+    
+    #strudel-repl {
+        height: 500px;
+    }
+}
