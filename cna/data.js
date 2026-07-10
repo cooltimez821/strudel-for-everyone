@@ -697,7 +697,9 @@ const CNA_DATA = {
 
   /* ------------------------------------------------------------
      SKILLS LAB — put the steps in order
-     Steps are simplified from common state skill checklists.
+     All 22 skills from the standard NNAAP/Credentia exam list,
+     plus one bonus skill. Steps are simplified from common state
+     skill checklists; exact requirements vary by state.
      ------------------------------------------------------------ */
   skills: [
     {
@@ -735,6 +737,233 @@ const CNA_DATA = {
       ]
     },
     {
+      id: "radial-pulse",
+      icon: "❤️",
+      title: "Counting & Recording the Radial Pulse",
+      why: "A core measurement skill — evaluators check your finger placement, your timing, and your accuracy.",
+      critical: "Use two or three FINGERTIPS on the thumb side of the wrist — never your thumb, which has its own pulse. Count for one full minute.",
+      steps: [
+        "Perform hand hygiene, greet the resident, and explain you'll be checking the pulse",
+        "Have the resident rest their arm comfortably with the palm down",
+        "Place two or three fingertips on the thumb side of the wrist",
+        "Press gently until you feel the pulse",
+        "Count the beats for one full minute",
+        "Note whether the rhythm is regular and the beat strong or weak",
+        "Record the pulse rate and report anything outside 60–100 to the nurse"
+      ]
+    },
+    {
+      id: "respirations",
+      icon: "🫁",
+      title: "Counting & Recording Respirations",
+      why: "The sneakiest vital sign — done right, the resident never knows you counted.",
+      critical: "Do NOT tell the resident you're counting — keep your fingers on the wrist as if still taking the pulse. One respiration = one inhale PLUS one exhale.",
+      steps: [
+        "Perform hand hygiene and position yourself where you can see the resident's chest",
+        "Take the radial pulse first, then keep your fingers resting on the wrist",
+        "Without announcing it, begin watching the rise and fall of the chest",
+        "Count each rise-and-fall as one respiration for one full minute",
+        "Note whether breathing is quiet and regular or labored and noisy",
+        "Record the respiratory rate and report anything outside 12–20 to the nurse"
+      ]
+    },
+    {
+      id: "bp",
+      icon: "🩸",
+      title: "Measuring Blood Pressure (Manual)",
+      why: "The most technical measurement skill on the exam — placement, inflation, and listening all get graded.",
+      critical: "Cuff on a BARE upper arm at heart level, stethoscope over the brachial artery. First sound = systolic; sound disappears = diastolic.",
+      steps: [
+        "Perform hand hygiene, explain the procedure, and clean the stethoscope earpieces and diaphragm",
+        "Seat the resident with the arm resting at heart level, palm up, sleeve out of the way",
+        "Wrap the correct-size cuff snugly around the bare upper arm, about an inch above the elbow",
+        "Locate the brachial artery at the inner elbow and place the stethoscope diaphragm over it",
+        "Inflate the cuff smoothly to the level your instructor or policy directs",
+        "Deflate the cuff slowly while listening",
+        "Note the reading at the first sound — the systolic pressure",
+        "Note the reading when the sound disappears — the diastolic pressure",
+        "Deflate fully, remove the cuff, and record the reading",
+        "Report a reading outside the resident's normal range to the nurse"
+      ]
+    },
+    {
+      id: "weight",
+      icon: "⚖️",
+      title: "Measuring Weight (Standing Scale)",
+      why: "Weight changes flag fluid problems and poor nutrition — accuracy and safety both count.",
+      critical: "Balance the scale at ZERO before the resident steps on, and stay close — the resident must stand still without holding on to anything.",
+      steps: [
+        "Perform hand hygiene, greet the resident, and explain the weight check",
+        "Set the scale to zero and make sure it balances",
+        "Help the resident step onto the center of the scale platform",
+        "Ask the resident to stand still with arms at their sides, not holding on",
+        "Read the weight accurately",
+        "Help the resident step safely off the scale",
+        "Record the weight and report significant changes to the nurse"
+      ]
+    },
+    {
+      id: "output",
+      icon: "🧪",
+      title: "Measuring & Recording Urinary Output",
+      why: "Intake and output tracking catches dehydration and kidney problems early — precision matters.",
+      critical: "Read the graduate on a FLAT surface at EYE LEVEL, and record in milliliters. Gloves on for the whole task.",
+      steps: [
+        "Perform hand hygiene and put on gloves",
+        "Pour the urine from the bedpan or urinal into the measuring graduate without spilling",
+        "Place the graduate on a flat surface",
+        "Read the amount at eye level",
+        "Empty the urine into the toilet and flush",
+        "Rinse the graduate and bedpan and put them away properly",
+        "Remove gloves and perform hand hygiene",
+        "Record the output in milliliters and report anything unusual"
+      ]
+    },
+    {
+      id: "bedbath",
+      icon: "🛁",
+      title: "Modified Bed Bath (Face & One Arm)",
+      why: "The exam version of bathing — evaluators watch water temperature checks, privacy, and gentle technique.",
+      critical: "Check the water temperature and have the RESIDENT verify it. Wash the eyes first with plain water, inner corner to outer, using a different part of the cloth for each eye.",
+      steps: [
+        "Perform hand hygiene, explain the bath, and provide privacy",
+        "Fill the basin with comfortably warm water and ask the resident to check the temperature",
+        "Place a towel across the resident's chest",
+        "Wash the eyes with a wet cloth and no soap, inner corner to outer, using a clean part of the cloth for each eye",
+        "Wash, rinse, and pat dry the rest of the face",
+        "Place a towel under the arm and wash the arm, shoulder to hand, with a soapy cloth",
+        "Rinse the arm and hand and pat them dry",
+        "Empty and rinse the basin and put used linens in the hamper",
+        "Make the resident comfortable, place the call light in reach, and perform hand hygiene"
+      ]
+    },
+    {
+      id: "pericare",
+      icon: "🚿",
+      title: "Perineal Care (Female)",
+      why: "The highest-stakes hygiene skill — technique errors cause urinary tract infections.",
+      critical: "Always wipe FRONT TO BACK, using a clean part of the washcloth for each stroke. Check the water temperature first.",
+      steps: [
+        "Perform hand hygiene, explain the care, provide privacy, and put on gloves",
+        "Position the resident on her back and place a waterproof pad beneath her",
+        "Check that the water is comfortably warm",
+        "Expose only the perineal area, keeping the rest of the body covered",
+        "Separate the labia and wash front to back with a soapy cloth, using a clean area for each stroke",
+        "Rinse front to back the same way",
+        "Pat the area dry front to back",
+        "Turn the resident to her side and wash, rinse, and dry the rectal area front to back",
+        "Remove the pad, cover the resident, and dispose of used linens",
+        "Remove gloves and perform hand hygiene"
+      ]
+    },
+    {
+      id: "catheter",
+      icon: "🩹",
+      title: "Catheter Care (Female)",
+      why: "A urinary catheter is a highway for bacteria — careful cleaning keeps infections out.",
+      critical: "Hold the catheter near the meatus and wipe AWAY from the body, at least 4 inches down the tubing, one direction only, clean cloth area per stroke. Never tug the catheter.",
+      steps: [
+        "Perform hand hygiene, explain the care, provide privacy, and put on gloves",
+        "Position the resident on her back and place a waterproof pad beneath her",
+        "Expose only the catheter area, keeping the resident draped",
+        "Check that the water is comfortably warm",
+        "Hold the catheter at the meatus without tugging, and wipe with a soapy cloth from the meatus down the tubing at least 4 inches",
+        "Repeat with a clean area of the cloth for each stroke, always moving away from the body",
+        "Rinse the same way, meatus outward, clean area per stroke",
+        "Dry the tubing gently, remove the pad, and cover the resident",
+        "Dispose of used supplies, remove gloves, and perform hand hygiene"
+      ]
+    },
+    {
+      id: "mouthcare",
+      icon: "🪥",
+      title: "Mouth Care (Brushing Teeth)",
+      why: "Oral care prevents pneumonia and painful decay in residents who can't manage it alone.",
+      critical: "Sit the resident UPRIGHT to prevent choking, and brush gently — gums bleed easily. Gloves on throughout.",
+      steps: [
+        "Perform hand hygiene, explain the care, and put on gloves",
+        "Help the resident into an upright sitting position",
+        "Place a towel across the resident's chest",
+        "Moisten the toothbrush and apply toothpaste",
+        "Brush all surfaces of the teeth and gently brush the tongue",
+        "Help the resident rinse and spit into the emesis basin",
+        "Wipe the resident's mouth and remove the towel",
+        "Clean and store the supplies",
+        "Remove gloves and perform hand hygiene"
+      ]
+    },
+    {
+      id: "dentures",
+      icon: "🦷",
+      title: "Cleaning Dentures",
+      why: "Dentures are fragile and expensive — the exam checks that you protect them and the resident's dignity.",
+      critical: "Line the sink with a towel or fill it with water before you start, and use LUKEWARM water — hot water warps dentures.",
+      steps: [
+        "Perform hand hygiene and put on gloves",
+        "Line the sink with a towel or partially fill it with water",
+        "Take the dentures to the sink in their denture cup",
+        "Rinse the dentures under lukewarm running water",
+        "Apply toothpaste or denture cleaner to the brush",
+        "Brush all surfaces of the dentures over the protected sink",
+        "Rinse the dentures thoroughly under lukewarm water",
+        "Place the dentures in a clean denture cup with fresh solution or cool water",
+        "Rinse the brush, clean up, remove gloves, and perform hand hygiene"
+      ]
+    },
+    {
+      id: "footcare",
+      icon: "🦶",
+      title: "Foot Care (One Foot)",
+      why: "Feet reveal circulation problems — and for residents with diabetes, small foot injuries become big emergencies.",
+      critical: "Dry THOROUGHLY between the toes, and apply lotion to the top and bottom of the foot but NEVER between the toes (trapped moisture invites infection).",
+      steps: [
+        "Perform hand hygiene, explain the care, and put on gloves",
+        "Fill the basin with comfortably warm water and check the temperature",
+        "Place the basin on a bath mat or towel and soak the resident's foot",
+        "Wash the entire foot, including between the toes",
+        "Rinse the foot and pat it completely dry, especially between the toes",
+        "Apply lotion to the top and bottom of the foot, but not between the toes",
+        "Help the resident into clean socks or footwear as appropriate",
+        "Empty and rinse the basin and dispose of used linens",
+        "Remove gloves and perform hand hygiene"
+      ]
+    },
+    {
+      id: "dressing",
+      icon: "👕",
+      title: "Dressing a Resident with a Weak Arm",
+      why: "\"Dress the weak, undress the strong\" — the exam's favorite dressing rule in action.",
+      critical: "Clothing goes ON the WEAK/affected arm first and comes OFF the strong arm first. Let the resident choose what to wear.",
+      steps: [
+        "Perform hand hygiene, explain the task, and provide privacy",
+        "Ask the resident to choose what they'd like to wear",
+        "Remove the old top from the strong arm first",
+        "Then slide the old top gently off the weak arm",
+        "Slide the clean sleeve onto the weak arm first",
+        "Guide the strong arm into the other sleeve",
+        "Smooth and adjust the clothing so it's comfortable and straight",
+        "Make sure the resident is comfortable and place the call light within reach",
+        "Perform hand hygiene"
+      ]
+    },
+    {
+      id: "stocking",
+      icon: "🧦",
+      title: "Applying a Knee-High Elastic Stocking",
+      why: "Anti-embolism stockings prevent blood clots — but only if they're on smoothly and correctly.",
+      critical: "Apply while the resident is LYING DOWN (before swelling starts), turn the stocking inside out to the heel first, and smooth out every wrinkle and twist.",
+      steps: [
+        "Perform hand hygiene, explain the task, and provide privacy",
+        "Position the resident lying on their back",
+        "Turn the stocking inside out down to the heel",
+        "Slip the foot of the stocking over the toes, foot, and heel",
+        "Pull the top of the stocking up over the calf toward the knee",
+        "Smooth out all wrinkles and twists so the stocking lies flat",
+        "Check that the heel is centered and the toes aren't pinched",
+        "Make the resident comfortable and place the call light within reach"
+      ]
+    },
+    {
       id: "transfer",
       icon: "🦽",
       title: "Transfer: Bed to Wheelchair (with Transfer Belt)",
@@ -751,42 +980,6 @@ const CNA_DATA = {
         "Have the resident pivot in small steps and reach for the far armrest",
         "Lower the resident slowly into the chair, hips to the back of the seat",
         "Remove the transfer belt and position the resident's feet on the footrests"
-      ]
-    },
-    {
-      id: "pulse",
-      icon: "❤️",
-      title: "Counting the Radial Pulse & Respirations",
-      why: "Two vital signs in one smooth sequence — done right, the resident never knows you counted their breathing.",
-      critical: "Fingertips (never the thumb) on the thumb side of the wrist. Keep your fingers in place afterward so the resident doesn't realize you're counting respirations.",
-      steps: [
-        "Perform hand hygiene, greet the resident, and explain you'll be checking the pulse",
-        "Have the resident rest their arm comfortably, palm down",
-        "Place two or three fingertips on the thumb side of the wrist",
-        "Count the pulse — a full minute if it feels irregular",
-        "Keep your fingers on the wrist and begin counting the rise and fall of the chest",
-        "Count respirations for a full minute without telling the resident",
-        "Note whether breathing is quiet and regular or labored",
-        "Record both measurements and report anything outside normal limits"
-      ]
-    },
-    {
-      id: "feeding",
-      icon: "🍽️",
-      title: "Feeding a Dependent Resident",
-      why: "Aspiration is a killer. Position, pacing, and attention make mealtimes safe and dignified.",
-      critical: "Verify the diet card against the resident's ID, sit the resident UPRIGHT, sit at EYE LEVEL, and alternate food with fluids.",
-      steps: [
-        "Perform hand hygiene and verify the diet card matches the resident's identification",
-        "Explain the meal and help the resident sit upright as fully as tolerated",
-        "Help the resident clean their hands and place a clothing protector if they wish",
-        "Sit at the resident's eye level",
-        "Describe the food and ask what they'd like first",
-        "Offer small bites, giving plenty of time to chew and swallow",
-        "Alternate solid food with sips of fluid",
-        "Wipe the resident's mouth as needed during and after the meal",
-        "Note how much was eaten and keep the resident upright after the meal",
-        "Record intake and report any coughing, choking, or swallowing trouble"
       ]
     },
     {
@@ -826,10 +1019,82 @@ const CNA_DATA = {
       ]
     },
     {
+      id: "rom-leg",
+      icon: "🦵",
+      title: "Passive Range of Motion: Knee & Ankle",
+      why: "Joints that don't move develop contractures — passive ROM keeps immobile residents flexible.",
+      critical: "SUPPORT the joint above and below, move slowly and smoothly, and stop immediately at any pain or resistance. Never force a joint.",
+      steps: [
+        "Perform hand hygiene, explain the exercises, and provide privacy",
+        "Position the resident lying on their back with the leg supported",
+        "Support the leg under the knee and under the ankle",
+        "Slowly bend the knee and then straighten it, repeating at least three times",
+        "Support the foot and ankle with both hands",
+        "Gently push the foot up toward the head, then point it down, repeating at least three times",
+        "Watch the resident's face for signs of pain and stop at any resistance",
+        "Make the resident comfortable and place the call light within reach"
+      ]
+    },
+    {
+      id: "rom-shoulder",
+      icon: "💪",
+      title: "Passive Range of Motion: Shoulder",
+      why: "The shoulder loses mobility fastest — gentle daily movement preserves dressing and reaching ability.",
+      critical: "Support the arm at the WRIST and ELBOW, keep every movement slow and smooth, and stop at pain or resistance.",
+      steps: [
+        "Perform hand hygiene, explain the exercises, and provide privacy",
+        "Position the resident lying on their back with the arm at their side",
+        "Support the resident's arm at the wrist and at the elbow",
+        "Raise the straight arm forward and overhead, then return it down, repeating at least three times",
+        "Move the straight arm out to the side and back to the body, repeating at least three times",
+        "Keep all movements slow, smooth, and gentle",
+        "Watch the resident's face for signs of pain and stop at any resistance",
+        "Make the resident comfortable and place the call light within reach"
+      ]
+    },
+    {
+      id: "feeding",
+      icon: "🍽️",
+      title: "Feeding a Dependent Resident",
+      why: "Aspiration is a killer. Position, pacing, and attention make mealtimes safe and dignified.",
+      critical: "Verify the diet card against the resident's ID, sit the resident UPRIGHT, sit at EYE LEVEL, and alternate food with fluids.",
+      steps: [
+        "Perform hand hygiene and verify the diet card matches the resident's identification",
+        "Explain the meal and help the resident sit upright as fully as tolerated",
+        "Help the resident clean their hands and place a clothing protector if they wish",
+        "Sit at the resident's eye level",
+        "Describe the food and ask what they'd like first",
+        "Offer small bites, giving plenty of time to chew and swallow",
+        "Alternate solid food with sips of fluid",
+        "Wipe the resident's mouth as needed during and after the meal",
+        "Note how much was eaten and keep the resident upright after the meal",
+        "Record intake and report any coughing, choking, or swallowing trouble"
+      ]
+    },
+    {
+      id: "bedpan",
+      icon: "🚽",
+      title: "Assisting with a Bedpan",
+      why: "Dignity under pressure — this skill tests privacy, positioning, and infection control all at once.",
+      critical: "Head of bed LOWERED when placing and removing the pan, RAISED while the resident uses it. Leave toilet paper and the call light within reach, and give privacy.",
+      steps: [
+        "Perform hand hygiene, explain the task, provide privacy, and put on gloves",
+        "Lower the head of the bed before placing the bedpan",
+        "Help the resident raise their hips and slide the bedpan into place",
+        "Raise the head of the bed so the resident can sit comfortably",
+        "Leave toilet paper and the call light within reach, and step out for privacy",
+        "Return when signaled, lower the head of the bed, and remove the bedpan carefully",
+        "Help the resident clean up, wiping front to back, and help them wash their hands",
+        "Empty the bedpan, observing and measuring output if required, then rinse it",
+        "Remove gloves, perform hand hygiene, and report anything unusual"
+      ]
+    },
+    {
       id: "occupied-bed",
       icon: "🧺",
+      bonus: true,
       title: "Making an Occupied Bed",
-      why: "Wrinkle-free linens aren't fussiness — wrinkles cause pressure injuries on fragile skin.",
+      why: "Bonus practice: wrinkle-free linens aren't fussiness — wrinkles cause pressure injuries on fragile skin.",
       critical: "Keep the resident covered and safe (far rail up) the whole time, and never let soiled linen touch your uniform.",
       steps: [
         "Perform hand hygiene, explain the task, and gather clean linens in order of use",

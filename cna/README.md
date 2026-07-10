@@ -11,7 +11,7 @@ accounts, no backend. Just open `index.html`.
 | 📖 **Lessons** | 6 focused modules (Role & Ethics, Infection Control, Safety, Vital Signs, ADLs, Communication & Rights) with interactive quick-check questions |
 | 🃏 **Flashcards** | 3 decks / 64 cards — terminology, charting abbreviations, and the "numbers to know" — with flip animation, mastery tracking, and keyboard shortcuts |
 | ✅ **Quiz Engine** | 48 exam-style questions with explanations. **Practice mode** (10 questions, instant feedback) and **Exam simulation** (30 questions, 30-minute countdown, graded review) |
-| 🧤 **Skills Lab** | 8 clinical skills (handwashing, PPE, transfers, feeding, positioning, occupied bed…) as put-the-steps-in-order challenges with mistake tracking — just like the state skills exam |
+| 🧤 **Skills Lab** | All **22 skills from the standard (NNAAP/Credentia) exam list** — from handwashing and PPE to blood pressure, catheter care, and passive range of motion — plus a bonus skill, each as a put-the-steps-in-order challenge with mistake tracking, just like the state skills exam |
 | 🎭 **Scenarios** | 5 branching "what would you do?" simulations (a fall, a choking resident, a care refusal, a fire, suspected abuse) with coaching on every decision |
 | 🏅 **Progress & Gamification** | XP, daily streaks, 11 badges, per-activity progress, and an overall "exam readiness" score — saved locally in your browser |
 

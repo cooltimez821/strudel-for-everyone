@@ -739,30 +739,42 @@
 
   routes.skills = function () {
     const sp = skillsProgress();
+    const examSkills = D.skills.filter(s => !s.bonus);
+    const bonusSkills = D.skills.filter(s => s.bonus);
+
+    const tile = (s) => {
+      const best = state.skillsBest[s.id];
+      return `
+        <button class="tile" data-go="skillGame" data-param="${s.id}">
+          <span class="tile-icon">${s.icon}</span>
+          <h3>${esc(s.title)}</h3>
+          <p class="tile-desc">${esc(s.why)}</p>
+          <span class="tile-meta">${best === undefined
+            ? s.steps.length + " steps"
+            : best === 0
+              ? '<span class="badge-done">🏆 Perfect run!</span>'
+              : `Best: ${best} mistake${best === 1 ? "" : "s"} — try for perfect`}</span>
+        </button>`;
+    };
+
     view.innerHTML = `
       <div class="view-header">
         <h1>🧤 Skills Lab</h1>
         <p class="subtitle">The state skills exam tests whether you can perform procedures in the correct order.
-        Here, the steps are scrambled — click them in the right sequence. Wrong clicks count as mistakes,
-        so think like an evaluator is watching.</p>
+        All <strong>${examSkills.length} skills from the standard exam list</strong> are here — steps scrambled;
+        click them in the right sequence. Wrong clicks count as mistakes, so think like an evaluator is watching.
+        (Exact checklists vary by state — always follow your own state's curriculum.)</p>
         <div class="progress-track" style="max-width:340px"><div class="progress-fill" style="width:${sp.done / sp.total * 100}%"></div></div>
       </div>
+      <h2 class="section-title">🎓 The ${examSkills.length} exam skills</h2>
       <div class="card-grid">
-        ${D.skills.map(s => {
-          const best = state.skillsBest[s.id];
-          return `
-            <button class="tile" data-go="skillGame" data-param="${s.id}">
-              <span class="tile-icon">${s.icon}</span>
-              <h3>${esc(s.title)}</h3>
-              <p class="tile-desc">${esc(s.why)}</p>
-              <span class="tile-meta">${best === undefined
-                ? s.steps.length + " steps"
-                : best === 0
-                  ? '<span class="badge-done">🏆 Perfect run!</span>'
-                  : `Best: ${best} mistake${best === 1 ? "" : "s"} — try for perfect`}</span>
-            </button>`;
-        }).join("")}
-      </div>`;
+        ${examSkills.map(tile).join("")}
+      </div>
+      ${bonusSkills.length ? `
+        <h2 class="section-title">⭐ Bonus practice</h2>
+        <div class="card-grid">
+          ${bonusSkills.map(tile).join("")}
+        </div>` : ""}`;
     wireGoButtons();
   };
 
