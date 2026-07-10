@@ -1,5 +1,9 @@
 # 🎵 Learn Strudel - Interactive Tutorial
 
+> 🩺 **Also in this repo:** [CNA Academy](cna/README.md) — an interactive learning experience for
+> Certified Nursing Assistant students, with lessons, flashcards, practice quizzes, a skills lab,
+> and branching scenarios. Open [`cna/index.html`](cna/index.html) to start.
+
 An interactive web tutorial for learning Strudel, the web-based live coding environment for algorithmic music patterns. **Perfect for beginners and experienced coders alike!**
 
 ## ✨ Features
